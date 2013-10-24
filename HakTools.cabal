@@ -1,0 +1,10 @@
+Name:          HakTools
+Version:       0.0
+Description:   Tools that I wrote in haskell. Things such as homework and other learnings.
+License:       MIT
+License-file:  LICENSE
+Author:        Raisdead
+Maintainer:    raisdead@gmail.com
+Build-Type:    Simple
+Cabal-Version: >=1.2
+Build-Depends: base, hmatrix
