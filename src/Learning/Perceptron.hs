@@ -18,8 +18,6 @@ module Learning.Perceptron (pla, applyHypothesis) where
   import Numeric.Container ((<.>), scale, Product, Container)
   import Numeric.LinearAlgebra ()
 
-  import Test.QuickCheck
-
   -- | A `Scalar` is a primitive quantity that stores a single quantity. It
   -- can be used as the component of a vector.
   type Scalar a = (Storable a, Num a, Num (Vector a), Product a, Ord a, Container Vector a)
@@ -59,18 +57,3 @@ module Learning.Perceptron (pla, applyHypothesis) where
         where
           weights' = adjustHyp weights $ head misses
 
-
-  data PerceptronTest = PerceptronTest [([Double],Bool)] deriving Show
-  instance Arbitrary PerceptronTest where
-    arbitrary = do
-      n <- choose (1,10) -- Pick the dimensionality
-      m <- choose (1,100) -- Pick the number of training vectors
-      f <- vector n :: Gen [Double] -- Pick the function that represents the world
-      xs <-  mapM vector $ take m $ repeat n :: Gen [[Double]] -- Pick some vectors from the world.
-      let xs' = map (\x -> (x, applyHypothesis (fromList (1:f)) (fromList (1:x)))) xs
-      return $ PerceptronTest xs'
-
-  prop_plaStable (PerceptronTest xys) = and $ map (\(x,y) -> y == p x) xys
-    where
-      p = pla xys
-      

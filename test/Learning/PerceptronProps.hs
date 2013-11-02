@@ -1,4 +1,4 @@
-module Test.Learning.Perceptron (prop_plaStable) where
+module Learning.PerceptronProps (prop_plaStable) where
   import Data.Packed.Vector (fromList)
   import Test.QuickCheck
 
