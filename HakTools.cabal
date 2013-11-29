@@ -18,6 +18,6 @@ cabal-version:       >=1.8
 
 library
   hs-source-dirs:    src
-  exposed-modules:   Learning.Perceptron
-  build-depends:     base == 4.6.*, hmatrix == 0.15.0.1
+  exposed-modules:   Learning.Perceptron, Algorithms.GameTheory, Math.Combinatorics
+  build-depends:     base == 4.6.*, hmatrix == 0.15.0.1, containers
 
