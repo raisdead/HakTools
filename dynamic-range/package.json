@@ -1,0 +1,15 @@
+{
+  "name": "discontinuous-range",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Taylor Everding <Taylor@Everding.email>",
+  "license": "ISC",
+  "dependencies": {
+    "jsverify": "^0.7.1",
+    "mocha": "^2.3.2"
+  }
+}
